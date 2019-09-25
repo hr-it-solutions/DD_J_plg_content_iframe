@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.6.5" type="plugin" group="content" method="upgrade">
+    <name>PLG_CONTENT_DD_IFRAME</name>
+    <version>1.0.0.0</version>
+    <creationDate>26.09.2019</creationDate>
+    <author>HR IT-Solutions Florian Häusler</author>
+    <authorEmail>info@hr-it-solutions.com</authorEmail>
+    <authorUrl>https://www.hr-it-solutions.com</authorUrl>
+    <copyright>Copyright (C) 2019 - 2019 HR-IT-Solutions GmbH</copyright>
+    <license>GNU/GPLv2 only</license>
+    <description>PLG_CONTENT_DD_IFRAME_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="dd_iframe">dd_iframe.php</filename>
+    </files>
+    <scriptfile>script.php</scriptfile>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_content_dd_iframe.sys.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_content_dd_iframe.ini</language>
+    </languages>
+    <updateservers>
+        <server type="collection" priority="1" name="HR IT-Solutions Updates">
+            http://www.hr-it-solutions.com/jextensions/update.xml
+        </server>
+    </updateservers>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+
+                <field
+                        name="euprivacy"
+                        type="radio"
+                        default="1"
+                        label="PLG_CONTENT_DD_IFRAME_EUPRIVACY_LBL"
+                        description="PLG_CONTENT_DD_IFRAME_EUPRIVACY_DESC"
+                        class="btn-group btn-group-yesno">
+                    <option value="1">PLG_CONTENT_DD_IFRAME_ON</option>
+                    <option value="0">PLG_CONTENT_DD_IFRAME_OFF</option>
+                </field>
+
+                <field name="defaultcover"
+                       type="media"
+                       directory="dd_iframe"
+                       default="media/plg_content_dd_iframe/img/defaultcover.jpg"
+                       size="40"
+                       label="PLG_CONTENT_DD_IFRAME_DEFAULT_COVER_LABEL"
+                       description="PLG_CONTENT_DD_IFRAME_DEFAULT_COVER_DESC"
+                />
+
+                <field
+                        name="coverdiv"
+                        type="radio"
+                        default="0"
+                        label="PLG_CONTENT_DD_IFRAME_COVER_DIV_LABEL"
+                        description="PLG_CONTENT_DD_IFRAME_COVER_DIV_DESC"
+                        class="btn-group btn-group-yesno">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="bt_responsiveembed"
+                        type="radio"
+                        default="0"
+                        label="PLG_CONTENT_DD_IFRAME_BT_RESPONSIVEEMBED_LABEL"
+                        description="PLG_CONTENT_DD_IFRAME_BT_RESPONSIVEEMBED_DESC"
+                        class="btn-group btn-group-yesno">
+                    <option value="0">PLG_CONTENT_DD_IFRAME_OFF</option>
+                    <option value="1">PLG_CONTENT_DD_IFRAME_ON</option>
+                </field>
+
+                <field type="spacer" name="spacer_autostyling" label="PLG_CONTENT_DD_IFRAME_HR"/>
+
+                <field
+                        name="auto_width"
+                        type="radio"
+                        default="0"
+                        label="PLG_CONTENT_DD_IFRAME_AUTO_WIDTH_LABEL"
+                        description="PLG_CONTENT_DD_IFRAME_AUTO_WIDTH_DESC"
+                        class="btn-group btn-group-yesno">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="auto_center"
+                        type="radio"
+                        default="0"
+                        label="PLG_CONTENT_DD_IFRAME_AUTO_CENTER_LABEL"
+                        description="PLG_CONTENT_DD_IFRAME_AUTO_CENTER_DESC"
+                        class="btn-group btn-group-yesno">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+
+                <field type="spacer" name="spacer_thumbnailapi" label="PLG_CONTENT_DD_IFRAME_HR"/>
+
+                <field
+                        name="gdpr_lc"
+                        type="radio"
+                        default="0"
+                        label="PLG_CONTENT_DD_IFRAME_GDPR_LC_LABEL"
+                        description="PLG_CONTENT_DD_IFRAME_GDPR_LC_DESC"
+                        class="btn-group btn-group-yesno">
+                    <option value="0">PLG_CONTENT_DD_IFRAME_OFF</option>
+                    <option value="1">PLG_CONTENT_DD_IFRAME_LOAD</option>
+                </field>
+
+                <field name="gdpr_text_simple"
+                       type="text"
+                       default=""
+                       label="PLG_CONTENT_DD_IFRAME_GDPR_TEXT_SIMPLE_LABEL"
+                       description="PLG_CONTENT_DD_IFRAME_GDPR_TEXT_SIMPLE_DESC"
+                       filter="safehtml"/>
+
+                <field
+                        name="loadbutton"
+                        type="radio"
+                        default="0"
+                        label="PLG_CONTENT_DD_IFRAME_LOADBUTTON_LABEL"
+                        description="PLG_CONTENT_DD_IFRAME_LOADBUTTON_DESC"
+                        class="btn-group btn-group-yesno">
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+
+                <field
+                        name="gdpr_text_on_hover"
+                        type="radio"
+                        default="0"
+                        label="PLG_CONTENT_DD_IFRAME_GDPR_TEXT_ON_HOVER_LABEL"
+                        description="PLG_CONTENT_DD_IFRAME_GDPR_TEXT_ON_HOVER_DESC"
+                        class="btn-group btn-group-yesno">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+            </fieldset>
+        </fields>
+    </config>
+    <media destination="plg_content_dd_iframe" folder="media">
+        <folder>img</folder>
+        <folder>css</folder>
+    </media>
+</extension>

@@ -1,9 +1,9 @@
 # DD_J_plg_content_iframe
-is a Joomla! content plugin to add Iframe inside an article.
+is a Joomla! content plugin to add any iframe you like inside an article compliant with the EU Privacy Standard.
 
 [![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.png?v=102)](https://opensource.org/licenses/GPL-2.0/)
 
-This plugin allows to simple embed iframes inside articles, in the extended privacy mode.
+This plugin allows to simple embed iframes like Facebook, Twitter, YouTube, etc... simply just any ifream you like inside articles, in the EU extended privacy mode.
 There are options to define custom covers and parameters. By default it is setup for **EU Privacy**. This means a special two-click solution to embed the frame not before clicking to your cover. Recommended for Member States of the European Union as well as for other parties to the Agreement on the European Economic Area.
 If you don't wish the EU Privacy mode, extended privacy can also be specified at plugin settings. The other settings can be setup for each iframe through our snipped parameters.
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.6.5" type="plugin" group="content" method="upgrade">
     <name>PLG_CONTENT_DD_IFRAME</name>
-    <version>1.0.0.1</version>
+    <version>1.0.0.2</version>
     <creationDate>26.09.2019</creationDate>
     <author>HR IT-Solutions Florian Häusler</author>
     <authorEmail>info@hr-it-solutions.com</authorEmail>
@@ -108,7 +108,7 @@
 
                 <field name="gdpr_text_simple"
                        type="text"
-                       default=""
+                       default="By viewing the iframe, data is passed on to the external provider. For more information, please see the Privacy Policy."
                        label="PLG_CONTENT_DD_IFRAME_GDPR_TEXT_SIMPLE_LABEL"
                        description="PLG_CONTENT_DD_IFRAME_GDPR_TEXT_SIMPLE_DESC"
                        filter="safehtml"/>

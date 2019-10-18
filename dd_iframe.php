@@ -124,6 +124,11 @@ class PlgContentDD_Iframe extends JPlugin
 
 		$match = str_replace(array('https://','http://'), '', $match);
 
+		$hasParams = false;
+		if (strpos($match, '?') !== false) {
+			$hasParams = true;
+		}
+
 		$iframeParams = array();
 		$matchParts = explode(':', trim($match, ':'));
 
@@ -139,7 +144,7 @@ class PlgContentDD_Iframe extends JPlugin
 			{
 				if (isset($matchParts[$key + 1]))
 				{
-					$iframeParams[$matchPart] = $matchParts[$key + 1];
+					$iframeParams[$matchPart] = trim($matchParts[$key + 1]);
 				}
 				else
 				{
@@ -195,7 +200,7 @@ class PlgContentDD_Iframe extends JPlugin
 		}
 
 		// Iframe url params
-		$IframeParams = $this->buildIframeSrcURLParams($iframeParams);
+		$IframeParams = $this->buildIframeSrcURLParams($iframeParams, $hasParams);
 
 		// GDPR Text
 		$gdpr_text = $this->gdpr_text_simple;
@@ -266,15 +271,38 @@ class PlgContentDD_Iframe extends JPlugin
 	 *
 	 * @return string  iframe paramter url string &param=value etc...
 	 */
-	private function buildIframeSrcURLParams($iframeParams)
+	private function buildIframeSrcURLParams($iframeParams, $hasParams = false)
 	{
+
 		// Parameter URL
-		$paramURL = '?';
+		$paramURL = '';
+
+		$i = 0;
 
 		// Parameter seup
 		foreach ($iframeParams as $key => $value)
 		{
-			$paramURL .= '&' . $key . '=' . $value;
+			if (in_array($key, array('src','cover','widht','height','class')))
+			{
+				continue;
+			}
+
+			if ($i === 0)
+			{
+				$paramURL .= '?';
+
+				if ($hasParams)
+				{
+					$paramURL .= '&';
+				}
+				$paramURL .= $key . '=' . $value;
+			}
+			else
+			{
+				$paramURL .= '&' . $key . '=' . $value;
+			}
+
+			$i++;
 		}
 
 		return $paramURL;
@@ -323,5 +351,5 @@ class PlgContentDD_Iframe extends JPlugin
 	{
 		$this->app->enqueueMessage(JText::_('PLG_CONTENT_DD_IFRAME_ALERT_INVALID_SNIPPED'), 'warning');
 	}
-	
+
 }
